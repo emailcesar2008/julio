@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="app.js" defer></script>
+    <title>Menu</title>
+</head>
+<body>
+    
+   <header>
+        <a href="file:///C:/Users/dedio/Downloads/Proyecto%20julio/index.html">
+            <h1>Menu</h1>
+        </a>
+    </header>
+
+   <!-- Input de búsqueda -->
+<br>
+<div class="search-container">
+    <input type="text" id="busqueda" oninput="filtrarProductos()" placeholder="Buscar producto" />
+    <span class="input-icon" onclick="iniciarBusquedaPorVoz()">
+        <i class="fa fa-microphone" aria-hidden="true"></i>
+    </span>
+</div>
+
+
+
+
+    <section class="contenedor">
+
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items" id="listaFiltrada">
+
+           <!-- Productos -->
+            <div class="item">
+                <span class="titulo-item">Carlota</span>
+                <img src="img/Productos/e1.png" alt="Carlota" class="img-item">
+                <span class="precio-item">$45</span>
+                <div class="acciones-item">
+                    <button class="boton-item">Agregar al Carrito</button>
+                    <button class="boton-detalles" type="button">Ver detalles</button>
+                </div>
+                <div class="descripcion-detalles">
+                    <p class="descripcion-texto">Postre frío, suave y cremoso, con una textura ligera que se deshace en la boca. Decorada con un toque crujiente de galleta y ralladura de limón.</p>
+                    <p class="descripcion-subtitulo">Ingredientes:</p>
+                    <ul class="descripcion-lista">
+                        <li>Limón</li>
+                        <li>Leche evaporada</li>
+                        <li>Leche condensada</li>
+                        <li>Galleta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="titulo-item">Hotcake</span>
+                <img src="img/Productos/e2.png" alt="Hotcake" class="img-item">
+                <span class="precio-item">$40</span>
+                <div class="acciones-item">
+                    <button class="boton-item">Agregar al Carrito</button>
+                    <button class="boton-detalles" type="button">Ver detalles</button>
+                </div>
+                <div class="descripcion-detalles">
+                    <p class="descripcion-texto">Suaves y esponjosos hot cakes rellenos, acompañados de rodajas de plátano y bañados con un toque dulce de lechera.</p>
+                    <p class="descripcion-subtitulo">Ingredientes:</p>
+                    <ul class="descripcion-lista">
+                        <li>Huevos</li>
+                        <li>Leche</li>
+                        <li>Harina</li>
+                        <li>Azúcar</li>
+                        <li>Mantequilla</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="titulo-item">Creepe roll de Ferrero</span>
+                <img src="img/Productos/e3.png" alt="Creepe roll de Ferrero" class="img-item">
+                <span class="precio-item">$65</span>
+                <div class="acciones-item">
+                    <button class="boton-item">Agregar al Carrito</button>
+                    <button class="boton-detalles" type="button">Ver detalles</button>
+                </div>
+                <div class="descripcion-detalles">
+                    <p class="descripcion-texto">Delicioso rollo relleno con capas suaves y cubierto de chocolate con textura crujiente, coronado con trozos de chocolate que intensifican su sabor.</p>
+                    <p class="descripcion-subtitulo">Ingredientes:</p>
+                    <ul class="descripcion-lista">
+                        <li>Huevo</li>
+                        <li>Harina</li>
+                        <li>Azúcar glass</li>
+                        <li>Mantequilla</li>
+                        <li>Cocoa</li>
+                        <li>Chocomilk</li>
+                        <li>Chocolate</li>
+                        <li>Queso crema</li>
+                        <li>Leche</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="titulo-item">Creepe roll de Mango</span>
+                <img src="img/Productos/e4.png" alt="Creepe roll de Mango" class="img-item">
+                <span class="precio-item">$55</span>
+                <div class="acciones-item">
+                    <button class="boton-item">Agregar al Carrito</button>
+                    <button class="boton-detalles" type="button">Ver detalles</button>
+                </div>
+                <div class="descripcion-detalles">
+                    <p class="descripcion-texto">Delicioso rollo de crepa relleno con suaves capas de crema fresca y jugosos cubos de mango, cubierto con un toque de azúcar glass y trozos de fruta.</p>
+                    <p class="descripcion-subtitulo">Ingredientes:</p>
+                    <ul class="descripcion-lista">
+                        <li>Harina</li>
+                        <li>Mantequilla</li>
+                        <li>Huevo</li>
+                        <li>Azúcar glass</li>
+                        <li>Crema chantillí</li>
+                        <li>Mango</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items"></div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">$0,00</span>
+                </div>
+                
+                <br>
+                <div class="formulario-pedido">
+                    <h3>Crear pedido</h3>
+                    <p class="texto-formulario">Completa tus datos para registrar tu pedido.</p>
+                    <form id="form-pedido">
+                        <label for="nombre-cliente">Nombre</label>
+                        <input type="text" id="nombre-cliente" name="nombre" placeholder="Escribe tu nombre" required>
+
+                        <label for="telefono-cliente">Teléfono</label>
+                        <input type="tel" id="telefono-cliente" name="telefono" placeholder="Escribe tu número de teléfono" pattern="[0-9]{10}" inputmode="numeric" required>
+
+                        <button type="submit" class="boton-pedido">Crear pedido</button>
+                    </form>
+                    <div id="mensaje-pedido" class="mensaje-pedido"></div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+<!-- Botón flotante de carrito -->
+<div id="floating-cart" onclick="scrollToSection()">
+  🛒
+</div>
+
+
+
+
+
+
+</body>
+</html>
