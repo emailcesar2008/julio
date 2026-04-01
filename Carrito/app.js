@@ -300,10 +300,10 @@ function crearPedido(event) {
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
         .then(function () {
             mensajePedido.innerHTML =
-                `Pedido enviado a <strong>${EMAILJS_DESTINO}</strong>.<br>` +
-                `Cliente: <strong>${nombre}</strong>.<br>` +
-                `Teléfono: <strong>${telefono}</strong>.<br>` +
-                `Total a cobrar: <strong>${total}</strong>.`;
+            `✅ <strong>Pedido creado con éxito</strong><br><br>` +
+           `Tu pedido ha sido recibido correctamente.<br>` +
+           `En breve nos pondremos en contacto contigo por WhatsApp o llamada para confirmar los detalles.<br><br>` +
+           `¡Gracias por tu compra! 🧁`;
 
             mensajePedido.classList.add('activo');
             formulario.reset();
